@@ -4,6 +4,28 @@ Spring 2013
 
 LPL: A Toy Linear Programming Language
 
+*An introduction to linearity*
+
+The point of linearity is to model exhaustible resources. Think for example if you have a data type which is supposed to represent money. The representation is digital and there's very little to stop you from writing a function, double, of the type Dollar -> (Dollar, Dollar) which just doubles a dollar. In haskell, we could write:
+
+double :: Dollar -> (Dollar, Dollar)
+double x = (x, x)
+
+If we're modeling exhaustible resources, this is obviously bad. Also, this function would be bad:
+
+kill :: Dollar -> ()
+kill = const ()
+
+Linearity means that you can't just make multiple copies or discard resources willy-nilly. In a linear language, it should be possible to write a function 
+
+makeChange :: Dollar -> (Quarter, Quarter, Quarter, Quarter)
+
+but if you wrote a program which doesn't use resources in this linear fashion, it shouldn't typeCheck.
+
+*Intro*
+
+This programming language is based on the theory of Linear Logic. Information about linear logic can be found in the lecture notes at http://www.cis.upenn.edu/~stevez/cis670/notes.pdf or on the page http://www.cis.upenn.edu/~stevez/cis670/ which links to more resources like Frank Pfenning's notes. 
+
 The bulk of this programming language is distributed in the five files types, parser, typechecker, eval and main (The other files contain the theorem prover which can be played around with in the ProverTypecheckerInterface file and were written by Mitchell Stern). I will discuss each in turn making special note of the real functions of interest. Afterwards I will exhibit the syntax of this language, show some examples and then suggest some fun things to try. 
 
 *Types*
