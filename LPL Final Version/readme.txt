@@ -225,8 +225,8 @@ Q
 
 *Further Exploration*
 
-The file ProverTypecheckerInterface.hs provides the method typeToExp which has type Type -> Maybe Exp which uses an automated theorem prover to proved expressions (proofs) of a given type (proposition). While coding on ones own in LPL can be rewarding, it can also be frustrating as the parser, as it stands, provides no error messages. On the other hand, getting types to parse isn't so difficult and provides many interesting and complex expressions to play with. 
+The file ProverTypecheckerInterface.hs provides the method typeToExp which has type Type -> Maybe Exp which uses an automated theorem prover to provide expressions (proofs) of a given type (proposition). While coding on one's own in LPL can be rewarding, it can also be frustrating as the parser, as it stands, provides no error messages. On the other hand, getting types to parse isn't so difficult and provides many interesting and complex expressions to play with. 
 
-Another thing to try is to write a function which doesn't use variables linearly. It should parse but not typecheck. These should parse, but not typecheck. The theorem prover should not return such expressions, but by slightly modifying any typechecking expression, you ought to be able to produce one. 
+Another thing to try is to write a function which doesn't use variables linearly. These should parse, but not typecheck. The theorem prover should not return such expressions, but by slightly modifying any typechecking expression, you ought to be able to produce one. 
 
 I also suggest trying to break the typechecker and eval modes by purposely naming variables poorly. Breaking things is fun.  
